@@ -43,7 +43,7 @@ const DEFAULT_CONFIG: SecureDownloadConfig = {
 const getProductionBaseUrl = (): string => {
   // For production deployment, use your actual domain
   // This should be your deployed website URL (e.g., Netlify, Vercel, etc.)
-  const PRODUCTION_URL = 'https://techcreator-portfolio.netlify.app/'; // Replace with your actual domain
+  const PRODUCTION_URL = 'https://techcreator-portfolio.netlify.app'; // Replace with your actual domain
   
   // Check if we're in development or production
   if (typeof window !== 'undefined') {
@@ -170,7 +170,9 @@ export const verifyDownloadToken = async (
           name,
           url,
           type,
-          size
+          size,
+          document_category,
+          review_stage
         )
       `)
       .eq('token', token)
